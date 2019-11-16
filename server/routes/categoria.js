@@ -53,9 +53,8 @@ app.get('/categoria/:id', verificaToken, (req, res) => {
 });
 
 app.post('/categoria', verificaToken, (req, res) => {
-    let body = req.body;
-    let usuario = req.usuario;
-    let producto = new Producto({
+    let categoria = new Categoria({
+        descripcion: req.body.descripcion
 
     });
     categoria.save((err, categoriaDB) => {
